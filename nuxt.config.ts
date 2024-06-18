@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import vuetify from "vite-plugin-vuetify";
+import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -10,32 +10,27 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    "~/assets/main.scss",
-    "vuetify/styles/main.sass",
-    "@mdi/font/css/materialdesignicons.css",
+    '~/assets/main.scss',
+    'vuetify/styles/main.sass',
+    '@mdi/font/css/materialdesignicons.css',
   ],
   build: {
-    transpile: ["vuetify"],
+    transpile: ['vuetify'],
   },
   typescript: {
     typeCheck: true,
   },
   modules: [
-    "@nuxt/eslint",
+    '@nuxt/eslint',
     (_options, nuxt) => {
-      nuxt.hooks.hook("vite:extendConfig", (config) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error The config object is of type UserConfig.
         config.plugins.push(
           vuetify({
             autoImport: true,
-          })
-        );
-      });
+          }),
+        )
+      })
     },
   ],
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
-});
+})

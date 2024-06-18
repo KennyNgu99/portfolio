@@ -16,12 +16,16 @@
   <br />
   <h3 class="semibold">Test SCSS Inheritance</h3>
   <div class="test-local-scss">Test local scss</div>
+
+  <v-btn>
+    <NuxtLink to="/portfolio">Portfolio</NuxtLink>
+  </v-btn>
 </template>
 
 <script setup lang="ts">
-const test: Ref<string> = ref<string>("tes22323t");
-// test.value = 1;
-// console.log(test.value);
+const test: Ref<string> = ref<string>('tes22323t')
+// test.value = 1
+console.log(test.value)
 // console.log(parseInt(test.value) + 1);
 </script>
 

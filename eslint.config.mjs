@@ -1,23 +1,23 @@
-import withNuxt from "./.nuxt/eslint.config.mjs";
+import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt()
-  // ...Custom flat configs append after nuxt's configs
-  .prepend
-  // ...Prepend some flat configs in front
-  ()
-  // Override some rules in a specific config, based on their name
-  .override("nuxt/typescript/setup", {
+  .prepend() // Ensure this method is correctly implemented in withNuxt
+  .override('nuxt/typescript/setup', {
     rules: {
-      "@typescript-eslint/ban-types": "off",
+      '@typescript-eslint/ban-types': 'off',
     },
   })
-  .override("nuxt/vue/rules", {
+  .override('nuxt/vue/rules', {
     rules: {
-      "vue/html-self-closing": "off",
+      'vue/html-self-closing': 'off',
+      'comma-dangle': 'off', // Disable the comma-dangle rule
+      'vue/singleline-html-element-content-newline': 'off', // Disable the Vue singleline HTML element content newline rule
+      'vue/max-attributes-per-line': 'off',
     },
   })
-  .override("nuxt/vue/single-root", {
+  .override('nuxt/vue/single-root', {
     rules: {
-      "vue/no-multiple-template-root": "off",
+      'vue/no-multiple-template-root': 'off',
     },
-  });
+  })
+// .extend(['plugin:prettier/recommended'])
