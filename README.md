@@ -1,5 +1,6 @@
 # Nuxt 3 Minimal Starter
 
+This is a base template with Vue3, Nuxt, Vuetify, Tailwind, Eslint Setup to start up a new project. Feel free to use it.
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
