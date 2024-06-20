@@ -7,6 +7,7 @@ $primary: #01579b;
 $secondary: #00bcd4;
 $tertiary: #630e81;
 $background: #fbfbfb;
+$contrast: #f0f0f0;
 
 // Text colors
 $text: #3e3e3e;
@@ -27,6 +28,7 @@ $error: #e63946;
   --success-color: #{$success};
   --warning-color: #{$warning};
   --error-color: #{$error};
+  --contrast-color: #{$contrast};
 }
 
 * {
@@ -56,6 +58,17 @@ h1 {
   font-size: 36px;
   font-style: normal;
   font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: $text;
+}
+
+h1.semibold {
+  font-family: 'Segoe UI';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
   line-height: normal;
   letter-spacing: 0.9px;
   text-transform: uppercase;
