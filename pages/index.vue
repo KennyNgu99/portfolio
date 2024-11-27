@@ -20,6 +20,12 @@
   <v-btn>
     <NuxtLink to="/portfolio">Portfolio</NuxtLink>
   </v-btn>
+  <v-btn>
+    <NuxtLink to="/portfolio2">Portfolio Version 2</NuxtLink>
+  </v-btn>
+  <v-btn>
+    <NuxtLink to="/portfolio3">Portfolio Version 3</NuxtLink>
+  </v-btn>
 </template>
 
 <script setup lang="ts">

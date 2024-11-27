@@ -7,11 +7,14 @@ $primary: #01579b;
 $secondary: #00bcd4;
 $tertiary: #630e81;
 $background: #fbfbfb;
-$contrast: #f0f0f0;
+// $contrast: #f0f0f0;
+$contrast: #ffd2a6;
 
 // Text colors
 $text: #3e3e3e;
 $subText: #b6b6b6;
+// $secDomText: #111111;
+$secDomText: #d66800;
 
 // Status colors
 $success: #006064;
@@ -24,6 +27,7 @@ $error: #e63946;
   --tertiary-color: #{$tertiary};
   --background-color: #{$background};
   --text-color: #{$text};
+  --text-sec-color: #{$secDomText};
   --subText-color: #{$subText};
   --success-color: #{$success};
   --warning-color: #{$warning};
@@ -46,11 +50,12 @@ body {
 
 .title {
   font-family: 'Segoe UI';
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
+  font-size: 52px;
+  // font-style: normal;
+  font-weight: 750;
   line-height: normal;
   color: $text;
+  // color: $secDomText;
 }
 
 h1 {
