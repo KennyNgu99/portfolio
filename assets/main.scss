@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Signature';
+  src: url("./font/Meddon-Regular.ttf") format('truetype');
+}
+
 // Base colors
 $primary: #01579b;
 $secondary: #00bcd4;
@@ -14,7 +19,7 @@ $contrast: #ffd2a6;
 $text: #3e3e3e;
 $subText: #b6b6b6;
 // $secDomText: #111111;
-$secDomText: #d66800;
+$secDomText: #964800;
 
 // Status colors
 $success: #006064;
@@ -56,6 +61,14 @@ body {
   line-height: normal;
   color: $text;
   // color: $secDomText;
+}
+
+.signature {
+  font-family: 'Signature';
+  font-style: normal;
+  font-size: 42px;
+  line-height: normal;
+  color: #8b4300;
 }
 
 h1 {
