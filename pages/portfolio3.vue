@@ -23,7 +23,14 @@
             display: 'flex',
           }"
         >
-          <v-icon>mdi-phone</v-icon>
+          <v-icon
+            :style="{
+              'align-self': 'center',
+              marginRight: '6px',
+              color: 'var(--text-sec-color)',
+            }"
+            >mdi-phone</v-icon
+          >
           <span class="top-bar-font">+6013-8035796 </span>
         </div>
       </v-col>
