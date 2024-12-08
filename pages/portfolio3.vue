@@ -1,7 +1,11 @@
 <template>
   <div class="top">
     <v-row no-gutters :style="{ height: '100%' }">
-      <v-col cols="3"><span class="signature">Kenny</span></v-col>
+      <v-col cols="3"
+        ><div :style="{ margin: '6px 0 0 12px' }">
+          <span class="signature">Kenny</span>
+        </div></v-col
+      >
       <v-col cols="6" class="px-8" :style="{ 'align-content': 'center' }">
         <div
           :style="{
@@ -36,7 +40,20 @@
       </v-col>
     </v-row>
   </div>
-  <div class="mid">Part 2</div>
+  <div class="mid">
+    <div :style="{ flex: 1, display: 'grid' }">
+      <span class="main-title" :style="{ 'align-content': 'end' }">
+        Hey There,
+      </span>
+      <span class="main-title">I'm Kenny</span>
+    </div>
+    <div :style="{ flex: 1, display: 'grid', marginLeft: '35vw' }">
+      <span class="description" :style="{ 'align-content': 'end' }">
+        Currently a fullstack developer.
+      </span>
+      <span class="description">And I love what i do.</span>
+    </div>
+  </div>
   <div class="bot">Part 3</div>
 </template>
 
@@ -55,16 +72,29 @@ definePageMeta({
 
 .top {
   height: 10vh;
-  // display: flex;
+  background-color: green;
 }
 
 .mid {
-  background-color: green;
   height: 50vh;
+  display: flex;
 }
 
 .bot {
   background-color: blue;
   height: 40vh;
+}
+
+.main-title {
+  font-size: 5.5rem;
+  color: var(--text-sec-color);
+  font-weight: 800;
+  margin-left: 6rem;
+}
+
+.description {
+  font-size: 1.5rem;
+  // color: var(--text-sec-color);
+  // margin-left: 6rem;
 }
 </style>
