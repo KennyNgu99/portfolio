@@ -54,10 +54,44 @@
       <span class="description">And I love what i do.</span>
     </div>
   </div>
-  <div class="bot">Part 3</div>
+  <div class="bot">
+    <div class="paint-background">
+      <v-img :src="paintBackground"></v-img>
+    </div>
+    <div class="portrait-background">
+      <v-img :src="portraitSvg"></v-img>
+    </div>
+    <div :style="{ display: 'flex', flex: 1, 'margin-left': '6rem' }">
+      <span
+        class="title"
+        :style="{ 'align-content': 'center', 'margin-right': '12px' }"
+        >2.5</span
+      >
+      <div :style="{ display: 'grid' }">
+        <h2 class="semibold" :style="{ 'align-content': 'end' }">YEARS</h2>
+        <h2 class="semibold">EXPERIENCE</h2>
+      </div>
+    </div>
+    <div :style="{ flex: '1' }">
+      <div
+        :style="{
+          display: 'grid',
+          'justify-content': 'center',
+        }"
+      >
+        <v-img :src="gcpLogo" class="gcp-logo"></v-img>
+        <span class="ace-font">GCP Certified</span>
+        <span class="ace-font">Associate</span>
+        <span class="ace-font">Cloud Engineer</span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
+import paintBackground from '@/assets/portfolio3/paintBackground.svg'
+import gcpLogo from '@/assets/portfolio3/gcpLogo.svg'
+import portraitSvg from '@/assets/portfolio3/portrait.svg'
 definePageMeta({
   layout: false,
 })
@@ -72,7 +106,7 @@ definePageMeta({
 
 .top {
   height: 10vh;
-  background-color: green;
+  // background-color: green;
 }
 
 .mid {
@@ -81,8 +115,10 @@ definePageMeta({
 }
 
 .bot {
-  background-color: blue;
+  // background-color: rgb(119, 119, 119);
   height: 40vh;
+  position: relative;
+  display: flex;
 }
 
 .main-title {
@@ -94,7 +130,35 @@ definePageMeta({
 
 .description {
   font-size: 1.5rem;
-  // color: var(--text-sec-color);
-  // margin-left: 6rem;
+}
+
+.paint-background {
+  position: absolute;
+  bottom: 30%;
+  width: 100%;
+  height: 100%;
+  scale: 1.8;
+}
+
+.portrait-background {
+  position: absolute;
+  bottom: 30%;
+  width: 100%;
+  height: 100%;
+  scale: 2.5;
+  z-index: 10;
+}
+
+.ace-font {
+  font-size: 28px;
+  text-transform: uppercase;
+  justify-self: center;
+  font-weight: 600;
+}
+
+.gcp-logo {
+  width: 100px;
+  height: 100px;
+  justify-self: center;
 }
 </style>
