@@ -14,6 +14,7 @@ $tertiary: #630e81;
 $background: #fbfbfb;
 // $contrast: #f0f0f0;
 $contrast: #ffd2a6;
+$orange_background: #EF8100;
 
 // Text colors
 $text: #3e3e3e;
@@ -31,6 +32,7 @@ $error: #e63946;
   --secondary-color: #{$secondary};
   --tertiary-color: #{$tertiary};
   --background-color: #{$background};
+  --background-orange-color: #{$orange_background};
   --text-color: #{$text};
   --text-sec-color: #{$secDomText};
   --subText-color: #{$subText};
