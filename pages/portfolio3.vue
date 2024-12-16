@@ -1,5 +1,6 @@
 <template>
   <div :style="{ position: 'relative' }">
+    <!-- FIRST SECTION -->
     <img
       src="~assets/portfolio3/paintBackground.svg"
       class="paint-background"
@@ -12,7 +13,7 @@
         <!-- signature section -->
         <v-col cols="3"
           ><div :style="{ margin: '12px 0 0 3vw' }">
-            <span class="signature">Kenny</span>
+            <span class="signature" :style="{ userSelect: 'none' }">Kenny</span>
           </div>
         </v-col>
 
@@ -27,13 +28,19 @@
             }"
           >
             <div class="top-buttons">
-              <span class="top-bar-font">Experience</span>
+              <div class="top-button-wrapper">
+                <span class="top-bar-font">Experience</span>
+              </div>
             </div>
             <div class="top-buttons">
-              <span class="top-bar-font">Resume</span>
+              <div class="top-button-wrapper">
+                <span class="top-bar-font">Resume</span>
+              </div>
             </div>
             <div class="top-buttons">
-              <span class="top-bar-font">Social media</span>
+              <div class="top-button-wrapper">
+                <span class="top-bar-font">Social media</span>
+              </div>
             </div>
           </div>
         </v-col>
@@ -44,7 +51,7 @@
           :style="{ padding: 0, margin: 0, justifyItems: 'center' }"
         >
           <div
-            class="top-buttons hover-div"
+            class="hover-div"
             :style="{
               justifyContent: 'center',
               display: 'grid',
@@ -55,7 +62,13 @@
               cursor: 'pointer',
             }"
           >
-            <span class="top-bar-font" :style="{ color: 'white' }">
+            <span
+              :style="{
+                color: 'white',
+                fontSize: '1.5rem',
+                userSelect: 'none',
+              }"
+            >
               Contact
             </span>
           </div>
@@ -114,6 +127,32 @@
         </div>
       </div>
     </div>
+
+    <!-- SECTION 2 -->
+    <!-- Experience Section -->
+    <!-- <section id="experience" class="experience-section">
+      <v-container>
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-content">
+          <div class="experience-card">
+            <h3>Fullstack Developer</h3>
+            <p>Company XYZ | 2022 - Present</p>
+            <p>
+              Worked on developing scalable web applications, integrating APIs,
+              and managing cloud infrastructure.
+            </p>
+          </div>
+          <div class="experience-card">
+            <h3>Frontend Developer</h3>
+            <p>Company ABC | 2020 - 2022</p>
+            <p>
+              Designed and implemented responsive UI components and ensured
+              cross-browser compatibility.
+            </p>
+          </div>
+        </div>
+      </v-container>
+    </section> -->
   </div>
 </template>
 
@@ -192,7 +231,7 @@ const yearOfExperience = computed(() => {
   justify-self: center;
 }
 
-// top bar related css
+// ********************* top bar related css
 .top-buttons {
   height: 100%;
   width: 100%;
@@ -204,16 +243,100 @@ const yearOfExperience = computed(() => {
   font-size: 1.5rem;
   color: var(--text-sec-color);
   text-transform: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.top-button-wrapper {
+  padding: 8px 16px;
+  // border: 2px solid transparent;
+  border-radius: 12px;
+  transition:
+    background 0.3s ease,
+    // border 0.5s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.top-bar-font:hover {
+.top-button-wrapper:hover {
+  // border: 2px solid var(--text-sec-color);
+  background: var(--text-sec-color);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.top-button-wrapper:hover .top-bar-font {
   color: var(--contrast-color);
+}
+
+.top-button-wrapper:active,
+.hover-div:active {
+  transform: translateY(4px);
 }
 
 .hover-div:hover {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+// ********************* experience section
+// .experience-section,
+// .resume-section,
+// .social-media-section {
+//   padding: 50px 20px;
+//   background-color: var(--background-color-light);
+// }
+
+// .section-title {
+//   font-size: 2.5rem;
+//   color: var(--text-primary-color);
+//   text-align: center;
+//   margin-bottom: 20px;
+// }
+
+// .experience-content,
+// .social-media-links {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 20px;
+//   align-items: center;
+// }
+
+// .experience-card {
+//   background: white;
+//   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+//   border-radius: 8px;
+//   padding: 20px;
+//   max-width: 600px;
+//   text-align: left;
+// }
+
+// .resume-content {
+//   text-align: center;
+// }
+
+// .download-button {
+//   padding: 10px 20px;
+//   background-color: var(--text-sec-color);
+//   color: white;
+//   text-decoration: none;
+//   border-radius: 5px;
+//   transition: 0.3s ease;
+// }
+
+// .download-button:hover {
+//   background-color: var(--contrast-color);
+// }
+
+// .social-media-links a {
+//   font-size: 1.2rem;
+//   color: var(--text-primary-color);
+//   text-decoration: none;
+//   transition: color 0.3s ease;
+// }
+
+// .social-media-links a:hover {
+//   color: var(--contrast-color);
+// }
 
 // for large web screen
 @media (min-width: 2560px) {
