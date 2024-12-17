@@ -1,6 +1,7 @@
 <template>
+  <!-- FIRST SECTION -->
+  <!-- Home section -->
   <div :style="{ position: 'relative' }">
-    <!-- FIRST SECTION -->
     <img
       src="~assets/portfolio3/paintBackground.svg"
       class="paint-background"
@@ -11,8 +12,8 @@
     <div class="top">
       <v-row no-gutters :style="{ height: '100%' }">
         <!-- signature section -->
-        <v-col cols="3"
-          ><div :style="{ margin: '12px 0 0 3vw' }">
+        <v-col cols="3">
+          <div :style="{ margin: '12px 0 0 3vw' }">
             <span class="signature" :style="{ userSelect: 'none' }">Kenny</span>
           </div>
         </v-col>
@@ -127,33 +128,42 @@
         </div>
       </div>
     </div>
-
-    <!-- SECTION 2 -->
-    <!-- Experience Section -->
-    <!-- <section id="experience" class="experience-section">
-      <v-container>
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-content">
-          <div class="experience-card">
-            <h3>Fullstack Developer</h3>
-            <p>Company XYZ | 2022 - Present</p>
-            <p>
-              Worked on developing scalable web applications, integrating APIs,
-              and managing cloud infrastructure.
-            </p>
-          </div>
-          <div class="experience-card">
-            <h3>Frontend Developer</h3>
-            <p>Company ABC | 2020 - 2022</p>
-            <p>
-              Designed and implemented responsive UI components and ensured
-              cross-browser compatibility.
-            </p>
-          </div>
-        </div>
-      </v-container>
-    </section> -->
   </div>
+
+  <!-- SECTION 2 -->
+  <!-- Experience Section -->
+  <br />
+  <br />
+  <section
+    id="experience"
+    class="experience-section"
+    :style="{
+      marginTop: '1150px',
+      backgroundColor: 'var(--background-color-light)',
+    }"
+  >
+    <v-container>
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-content">
+        <div class="experience-card">
+          <h3>Fullstack Developer</h3>
+          <p>Company XYZ | 2022 - Present</p>
+          <p>
+            Worked on developing scalable web applications, integrating APIs,
+            and managing cloud infrastructure.
+          </p>
+        </div>
+        <div class="experience-card">
+          <h3>Frontend Developer</h3>
+          <p>Company ABC | 2020 - 2022</p>
+          <p>
+            Designed and implemented responsive UI components and ensured
+            cross-browser compatibility.
+          </p>
+        </div>
+      </div>
+    </v-container>
+  </section>
 </template>
 
 <script setup lang="ts">

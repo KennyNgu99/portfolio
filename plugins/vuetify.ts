@@ -4,7 +4,9 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-export default defineNuxtPlugin((nuxt) => {
+import type { NuxtApp } from 'nuxt/app'
+
+export default defineNuxtPlugin((nuxt: NuxtApp) => {
   const vuetify = createVuetify({
     ssr: true,
     theme: {
