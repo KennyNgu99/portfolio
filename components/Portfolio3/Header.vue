@@ -4,12 +4,20 @@
       <!-- signature section -->
       <v-col cols="3">
         <div :style="{ margin: '12px 0 0 3vw' }">
-          <span class="signature" :style="{ userSelect: 'none' }">Kenny</span>
+          <span
+            class="signature"
+            :style="{ userSelect: 'none', fontSize: '28px' }"
+            >Kenny</span
+          >
         </div>
       </v-col>
 
       <!-- buttons section -->
-      <v-col cols="6" class="px-8" :style="{ alignContent: 'center' }">
+      <v-col
+        cols="6"
+        class="px-8"
+        :style="{ alignContent: 'center', marginTop: '12px' }"
+      >
         <div
           :style="{
             display: 'flex',
@@ -56,7 +64,7 @@
           <span
             :style="{
               color: 'white',
-              fontSize: '1.5rem',
+              fontSize: '20px',
               userSelect: 'none',
             }"
           >
@@ -71,6 +79,10 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+.top {
+  height: 10vh;
+}
+
 .top-button-wrapper:active,
 .hover-div:active {
   transform: translateY(4px);
@@ -88,7 +100,7 @@
   align-items: center;
 }
 .top-bar-font {
-  font-size: 1.5rem;
+  font-size: 20px;
   color: var(--text-sec-color);
   text-transform: none;
   pointer-events: none;

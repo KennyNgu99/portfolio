@@ -11,7 +11,7 @@
     <!-- top bar -->
     <Portfolio3Header />
 
-    <div class="mid">
+    <div class="middle-section">
       <div :style="{ flex: 1, display: 'grid' }">
         <span class="main-title" :style="{ alignContent: 'end' }">
           Hey There,
@@ -23,7 +23,7 @@
           flex: 1,
           display: 'grid',
           justifyContent: 'end',
-          marginRight: '14rem',
+          marginRight: '10vw',
         }"
       >
         <span class="description" :style="{ alignContent: 'end' }">
@@ -32,20 +32,25 @@
         <span class="description">And I love what i do.</span>
       </div>
     </div>
-    <div class="bot">
+    <div class="bottom-section">
       <div :style="{ display: 'flex', flex: 1, marginLeft: '6rem' }">
         <span
           class="title"
           :style="{
             alignContent: 'center',
             marginRight: '12px',
-            fontSize: '62px',
+            fontSize: '3rem',
           }"
           >{{ yearOfExperience }}
         </span>
         <div :style="{ display: 'grid' }">
-          <h2 class="semibold" :style="{ alignContent: 'end' }">YEARS</h2>
-          <h2 class="semibold">EXPERIENCE</h2>
+          <h2
+            class="semibold"
+            :style="{ alignContent: 'end', fontSize: '1.5rem' }"
+          >
+            YEARS
+          </h2>
+          <h2 class="semibold" :style="{ fontSize: '1.5rem' }">EXPERIENCE</h2>
         </div>
       </div>
       <div :style="{ flex: '1' }">
@@ -53,7 +58,7 @@
           :style="{
             display: 'grid',
             justifyContent: 'end',
-            marginRight: '16rem',
+            marginRight: '9vw',
           }"
         >
           <img :src="gcpLogo" class="gcp-logo" />
@@ -67,7 +72,7 @@
 
   <!-- SECTION 2 -->
   <!-- Experience Section -->
-  <br />
+  <!-- <br />
   <br />
   <section
     id="experience"
@@ -98,7 +103,7 @@
         </div>
       </div>
     </v-container>
-  </section>
+  </section> -->
 </template>
 
 <script setup lang="ts">
@@ -124,47 +129,47 @@ const yearOfExperience = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-.top {
-  height: 10vh;
-}
-
-.mid {
+// ********************* section related css
+.middle-section {
   height: 50vh;
   display: flex;
 }
 
-.bot {
+.bottom-section {
   height: 40vh;
   display: flex;
 }
 
+// ********************* font related css
 .main-title {
-  font-size: 5.5rem;
+  font-size: 5rem;
   color: var(--text-sec-color);
   font-weight: 800;
   margin-left: 6rem;
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
+// ********************* portrait and paint background related css
 .paint-background {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .portrait-background {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.43);
 }
 
+// ********************* gcp ace related css
 .ace-font {
-  font-size: 28px;
+  font-size: 1.5rem;
   text-transform: uppercase;
   justify-self: center;
   font-weight: 600;
