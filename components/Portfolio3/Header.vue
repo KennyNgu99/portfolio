@@ -24,7 +24,7 @@
         >
           <div class="top-buttons">
             <div class="top-button-wrapper">
-              <span class="top-bar-font">Experience</span>
+              <span class="top-bar-font">Work Experience</span>
             </div>
           </div>
           <div class="top-buttons">
