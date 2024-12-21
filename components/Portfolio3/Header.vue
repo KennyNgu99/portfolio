@@ -13,11 +13,7 @@
       </v-col>
 
       <!-- buttons section -->
-      <v-col
-        cols="6"
-        class="px-8"
-        :style="{ alignContent: 'center', marginTop: '12px' }"
-      >
+      <v-col cols="6" class="px-8" :style="{ alignContent: 'center' }">
         <div
           :style="{
             display: 'flex',

@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ position: 'relative' }">
+  <div :style="{ position: 'relative', height: '90vh' }">
     <img
       src="~assets/portfolio3/paintBackground.svg"
       class="paint-background"
@@ -117,7 +117,7 @@ const yearOfExperience = computed(() => {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -52%) scale(0.9);
 }
 
 .portrait-background {

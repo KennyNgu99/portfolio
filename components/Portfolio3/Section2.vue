@@ -1,13 +1,7 @@
 <template>
-  <section
-    class="experience-section"
-    :style="{
-      marginTop: '1150px',
-      backgroundColor: 'var(--background-color-light)',
-    }"
-  >
-    <v-container>
-      <h2 class="section-title">Experience</h2>
+  <section class="experience-section">
+    <div :style="{ backgroundColor: 'cyan' }">
+      <h2 class="section-title">Work Experience</h2>
       <div class="experience-content">
         <div class="experience-card">
           <h3>Fullstack Developer</h3>
@@ -26,7 +20,7 @@
           </p>
         </div>
       </div>
-    </v-container>
+    </div>
   </section>
 </template>
 
@@ -34,11 +28,11 @@
 
 <style lang="scss" scoped>
 // ********************* experience section
-.experience-section,
-.resume-section,
-.social-media-section {
-  padding: 50px 20px;
-  background-color: var(--background-color-light);
+.experience-section {
+  margin: 50px 15px 50px 15px;
+  background-color: var(--contrast-color);
+  border-radius: 10px;
+  height: 90vh;
 }
 
 .section-title {
