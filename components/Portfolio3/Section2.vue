@@ -9,7 +9,7 @@
 
     <!-- Experience content -->
     <div class="experience-content">
-      <div class="experience-card">
+      <!-- <div class="experience-card">
         <h3>Fullstack Developer</h3>
         <p>Company XYZ | 2022 - Present</p>
         <p>
@@ -24,6 +24,25 @@
           Designed and implemented responsive UI components and ensured
           cross-browser compatibility.
         </p>
+      </div> -->
+      <div class="experience-card">
+        <span class="experience-card-number">01</span>
+        <span class="experience-card-job">Gamuda, Software Engineer</span>
+        <span class="experience-card-description"
+          >Currently working on the tunneling software projects in Tunnel
+          Research & Development Team.</span
+        >
+      </div>
+
+      <div class="experience-card">
+        <span class="experience-card-number">02</span>
+        <span class="experience-card-job"
+          >Intel, Structural Design Engineer Trainee</span
+        >
+        <span class="experience-card-description"
+          >Currently working on the tunneling software projects in Tunnel
+          Research & Development Team.</span
+        >
       </div>
     </div>
   </div>
@@ -51,52 +70,43 @@
 .section-description {
   font-size: 3rem;
   color: var(--text-sec-color);
-  margin: 0 0 0 5rem;
+  margin-left: 5rem;
   font-weight: 700;
 }
 
-.experience-content,
-.social-media-links {
+.experience-content {
+  margin: 12px 5rem 0 5rem;
+  background-color: transparent;
   display: flex;
-  flex-direction: column;
   gap: 20px;
-  align-items: center;
 }
 
 .experience-card {
   background: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  display: flex;
   border-radius: 8px;
-  padding: 20px;
-  max-width: 600px;
-  text-align: left;
+  height: 45vh;
+  width: 35vw;
 }
 
-.resume-content {
-  text-align: center;
+.experience-card-number {
+  font-size: 5rem;
+  color: var(--background-orange-color);
+  font-weight: 700;
+  margin: 0 12px 0 12px;
 }
 
-.download-button {
-  padding: 10px 20px;
-  background-color: var(--text-sec-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: 0.3s ease;
+.experience-card-job {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 12px 0 12px;
 }
 
-.download-button:hover {
-  background-color: var(--contrast-color);
-}
-
-.social-media-links a {
-  font-size: 1.2rem;
-  color: var(--text-primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-media-links a:hover {
-  color: var(--contrast-color);
+.experience-card-description {
+  font-size: 1rem;
+  margin: 12px 12px 0 12px;
+  color: var(--text-color);
 }
 </style>
