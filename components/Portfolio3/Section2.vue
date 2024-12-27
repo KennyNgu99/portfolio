@@ -9,46 +9,69 @@
 
     <!-- Experience content -->
     <div class="experience-content">
-      <!-- <div class="experience-card">
-        <h3>Fullstack Developer</h3>
-        <p>Company XYZ | 2022 - Present</p>
-        <p>
-          Worked on developing scalable web applications, integrating APIs, and
-          managing cloud infrastructure.
-        </p>
-      </div>
-      <div class="experience-card">
-        <h3>Frontend Developer</h3>
-        <p>Company ABC | 2020 - 2022</p>
-        <p>
-          Designed and implemented responsive UI components and ensured
-          cross-browser compatibility.
-        </p>
-      </div> -->
-      <div class="experience-card">
+      <div
+        class="experience-card"
+        :class="{ 'animate-card': props.isVisible }"
+        :style="{ animationDelay: '0s' }"
+      >
         <span class="experience-card-number">01</span>
-        <span class="experience-card-job">Gamuda, Software Engineer</span>
-        <span class="experience-card-description"
-          >Currently working on the tunneling software projects in Tunnel
-          Research & Development Team.</span
-        >
+        <div :style="{ display: 'flex' }">
+          <span class="experience-card-job-title" :style="{ color: 'red' }">
+            Gamuda
+          </span>
+          <span
+            class="experience-card-job-title"
+            :style="{ 'margin-left': '0' }"
+          >
+            , Software Engineer
+          </span>
+        </div>
+        <span class="experience-card-description">
+          I am currently working on tunneling software projects as part of the
+          Tunnel Research & Development Team. My responsibilities include
+          full-stack development using the Vue.js and Nuxt frameworks.
+          Additionally, I deploy cloud-based solutions on the GCP platform,
+          leveraging backend technologies such as Golang and Python.
+        </span>
       </div>
-
-      <div class="experience-card">
+      <div
+        class="experience-card"
+        :class="{ 'animate-card': props.isVisible }"
+        :style="{ animationDelay: '0.1s' }"
+      >
         <span class="experience-card-number">02</span>
-        <span class="experience-card-job"
-          >Intel, Structural Design Engineer Trainee</span
-        >
-        <span class="experience-card-description"
-          >Currently working on the tunneling software projects in Tunnel
-          Research & Development Team.</span
-        >
+        <div :style="{ display: 'flex' }">
+          <span
+            class="experience-card-job-title"
+            :style="{ color: 'var(--primary-color)' }"
+          >
+            Intel
+          </span>
+          <span
+            class="experience-card-job-title"
+            :style="{ 'margin-left': '0' }"
+          >
+            , Structural Design Engineer Trainee
+          </span>
+        </div>
+        <span class="experience-card-description">
+          Involved in Application Specific Integrated Circuit (ASIC) backend
+          development, focusing on automating design rule checking (DRC) fixes
+          using TCL scripting and Synopsys tool (IC Compiler II). My role
+          includes developing automation scripts to streamline workflows and
+          visualizing results.
+        </span>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// Handle props here
+const props = defineProps({
+  isVisible: Boolean,
+})
+</script>
 
 <style lang="scss" scoped>
 // ********************* experience section
@@ -68,7 +91,7 @@
 }
 
 .section-description {
-  font-size: 3rem;
+  font-size: 3.3rem;
   color: var(--text-sec-color);
   margin-left: 5rem;
   font-weight: 700;
@@ -89,24 +112,43 @@
   border-radius: 8px;
   height: 45vh;
   width: 35vw;
+  justify-content: center;
+  opacity: 0;
+  // animation: slideIn 0.5s forwards ease-in-out;
 }
 
 .experience-card-number {
   font-size: 5rem;
   color: var(--background-orange-color);
   font-weight: 700;
-  margin: 0 12px 0 12px;
+  margin: 0 24px 0 24px;
 }
 
-.experience-card-job {
+.experience-card-job-title {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0 12px 0 12px;
+  margin: 0 0 0 24px;
 }
 
 .experience-card-description {
   font-size: 1rem;
-  margin: 12px 12px 0 12px;
+  margin: 12px 24px 0 24px;
   color: var(--text-color);
+}
+
+// card animation
+.animate-card {
+  animation: slideIn 0.5s forwards ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 </style>

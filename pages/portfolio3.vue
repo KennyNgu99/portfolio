@@ -8,7 +8,9 @@
 
   <!-- SECTION 2 -->
   <!-- Experience Section -->
-  <Portfolio3Section2 />
+  <div ref="section2Ref">
+    <Portfolio3Section2 :isVisible="isSection2Visible" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -20,6 +22,7 @@ definePageMeta({
 
 // Reactive variables for header behavior
 const isSticky = ref<boolean>(false)
+const isSection2Visible = ref<boolean>(false)
 
 // Function to handle scroll
 const checkScroll = () => {
@@ -27,9 +30,24 @@ const checkScroll = () => {
   isSticky.value = offset > 100
 }
 
+// Intersection Observer for Section 2
+const section2Ref = ref<HTMLElement | null>(null)
+const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+  const entry = entries[0]
+  isSection2Visible.value = entry.isIntersecting
+}
+
 // Attach event listener on mount
 onMounted(() => {
   window.addEventListener('scroll', checkScroll)
+  // Initialize Intersection Observer
+  const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.2, // Trigger when 20% of section is visible
+  })
+
+  if (section2Ref.value) {
+    observer.observe(section2Ref.value)
+  }
 })
 
 // Cleanup on unmount
