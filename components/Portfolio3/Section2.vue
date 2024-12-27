@@ -14,7 +14,11 @@
         :class="{ 'animate-card': props.isVisible }"
         :style="{ animationDelay: '0s' }"
       >
-        <span class="experience-card-number">01</span>
+        <div :style="{ position: 'relative' }">
+          <span class="experience-card-number">01</span>
+          <img :src="gamudaLogo" class="gamuda-logo" />
+        </div>
+
         <div :style="{ display: 'flex' }">
           <span class="experience-card-job-title" :style="{ color: 'red' }">
             Gamuda
@@ -39,7 +43,10 @@
         :class="{ 'animate-card': props.isVisible }"
         :style="{ animationDelay: '0.1s' }"
       >
-        <span class="experience-card-number">02</span>
+        <div :style="{ position: 'relative' }">
+          <span class="experience-card-number">02</span>
+          <img :src="intelLogo" class="intel-logo" />
+        </div>
         <div :style="{ display: 'flex' }">
           <span
             class="experience-card-job-title"
@@ -67,6 +74,8 @@
 </template>
 
 <script setup lang="ts">
+import intelLogo from '@/assets/portfolio3/intelLogo.svg'
+import gamudaLogo from '@/assets/portfolio3/gamudLogo.svg'
 // Handle props here
 const props = defineProps({
   isVisible: Boolean,
@@ -80,7 +89,6 @@ const props = defineProps({
   background-color: var(--contrast-color);
   border-radius: 10px;
   height: 85vh;
-  background-color: var(--contrast-color);
 }
 
 .section-title {
@@ -114,7 +122,7 @@ const props = defineProps({
   width: 35vw;
   justify-content: center;
   opacity: 0;
-  // animation: slideIn 0.5s forwards ease-in-out;
+  position: relative;
 }
 
 .experience-card-number {
@@ -134,6 +142,20 @@ const props = defineProps({
   font-size: 1rem;
   margin: 12px 24px 0 24px;
   color: var(--text-color);
+}
+
+.gamuda-logo {
+  position: absolute;
+  transform: translateY(-50%) scale(0.2);
+  top: 50%;
+  right: calc(-20%);
+}
+
+.intel-logo {
+  position: absolute;
+  transform: translateY(-50%) scale(0.3);
+  top: 50%;
+  right: calc(-30%);
 }
 
 // card animation

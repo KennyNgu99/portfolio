@@ -29,7 +29,7 @@
           </div>
           <div class="top-buttons">
             <div class="top-button-wrapper">
-              <span class="top-bar-font">Resume</span>
+              <span class="top-bar-font">Projects</span>
             </div>
           </div>
           <div class="top-buttons">

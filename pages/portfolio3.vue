@@ -11,6 +11,8 @@
   <div ref="section2Ref">
     <Portfolio3Section2 :isVisible="isSection2Visible" />
   </div>
+
+  <Portfolio3Section3 />
 </template>
 
 <script setup lang="ts">
@@ -42,7 +44,8 @@ onMounted(() => {
   window.addEventListener('scroll', checkScroll)
   // Initialize Intersection Observer
   const observer = new IntersectionObserver(handleIntersection, {
-    threshold: 0.2, // Trigger when 20% of section is visible
+    // Trigger when 20% of section is visible
+    threshold: 0.2,
   })
 
   if (section2Ref.value) {
