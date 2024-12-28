@@ -2,7 +2,7 @@
   <div class="experience-section">
     <!-- Title and description -->
     <div :style="{ display: 'flex', flexDirection: 'column' }">
-      <span class="section-title">Work Experience</span>
+      <span class="section-title">My Working Experience</span>
       <span class="section-description"> Companies I have worked </span>
       <span class="section-description"> for in the past. </span>
     </div>
@@ -30,6 +30,9 @@
             , Software Engineer
           </span>
         </div>
+        <span :style="{ margin: '-2px 0 0 24px', fontStyle: 'italic' }">
+          (2022 - Present)
+        </span>
         <span class="experience-card-description">
           I am currently working on tunneling software projects as part of the
           Tunnel Research & Development Team. My responsibilities include
@@ -61,6 +64,9 @@
             , Structural Design Engineer Trainee
           </span>
         </div>
+        <span :style="{ margin: '-2px 0 0 24px', fontStyle: 'italic' }">
+          (2020 - 2021)
+        </span>
         <span class="experience-card-description">
           Involved in Application Specific Integrated Circuit (ASIC) backend
           development, focusing on automating design rule checking (DRC) fixes
@@ -88,7 +94,7 @@ const props = defineProps({
   margin: 50px 15px 50px 15px;
   background-color: var(--contrast-color);
   border-radius: 10px;
-  height: 85vh;
+  height: 87vh;
 }
 
 .section-title {
@@ -118,7 +124,7 @@ const props = defineProps({
   flex-direction: column;
   display: flex;
   border-radius: 8px;
-  height: 45vh;
+  height: 47vh;
   width: 35vw;
   justify-content: center;
   opacity: 0;
