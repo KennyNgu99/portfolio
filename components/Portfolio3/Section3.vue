@@ -10,18 +10,38 @@
     </div>
     <div class="scroll-wrapper" ref="scrollWrapper">
       <div class="scroll-container">
-        <div class="project-card">Project 1</div>
-        <div class="project-card">Project 2</div>
-        <div class="project-card">Project 3</div>
-        <div class="project-card">Project 4</div>
-        <div class="project-card">Project 5</div>
+        <div class="project-card" :style="{ backgroundColor: 'red' }">
+          Project 1
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'yellow' }">
+          Project 2
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'green' }">
+          Project 3
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'cyan' }">
+          Project 4
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'orange' }">
+          Project 5
+        </div>
 
         <!-- Duplicate Cards for Seamless Loop -->
-        <div class="project-card">Project 6</div>
-        <div class="project-card">Project 7</div>
-        <div class="project-card">Project 8</div>
-        <div class="project-card">Project 9</div>
-        <div class="project-card">Project 10</div>
+        <div class="project-card" :style="{ backgroundColor: 'red' }">
+          Project 1
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'yellow' }">
+          Project 2
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'green' }">
+          Project 3
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'cyan' }">
+          Project 4
+        </div>
+        <div class="project-card" :style="{ backgroundColor: 'orange' }">
+          Project 5
+        </div>
       </div>
     </div>
   </div>
@@ -143,7 +163,7 @@ onMounted(() => {
 .scroll-container {
   display: flex;
   white-space: nowrap;
-  animation: scroll 10s linear infinite; /* Smooth infinite scrolling */
+  animation: scroll 20s linear infinite; /* Smooth infinite scrolling */
   width: max-content; /* Adjust width based on content */
 }
 
@@ -168,10 +188,8 @@ onMounted(() => {
 }
 
 .project-card:hover {
-  background-color: var(--background-orange-color);
-  // transform: scale(2);
-  // height: 50vh;
-  // border-radius: 18px;
+  transform: scale(1.05);
+  border-radius: 18px;
 }
 
 /* While dragging */

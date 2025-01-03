@@ -3,8 +3,10 @@
     <!-- Title and description -->
     <div :style="{ display: 'flex', flexDirection: 'column' }">
       <span class="section-title">My Working Experience</span>
-      <span class="section-description"> Companies I have worked </span>
-      <span class="section-description"> for in the past. </span>
+      <span class="section-description">
+        Companies I have worked for in the past.</span
+      >
+      <!-- <span class="section-description"> for in the past. </span> -->
     </div>
 
     <!-- Experience content -->
@@ -95,17 +97,19 @@ const props = defineProps({
   background-color: var(--contrast-color);
   border-radius: 10px;
   height: 87vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--background-orange-color);
   margin: 3rem 0 0 5rem;
   font-weight: 700;
 }
 
 .section-description {
-  font-size: 3.3rem;
+  font-size: 4rem;
   color: var(--text-sec-color);
   margin-left: 5rem;
   font-weight: 700;
@@ -116,6 +120,8 @@ const props = defineProps({
   background-color: transparent;
   display: flex;
   gap: 20px;
+  align-items: center;
+  height: 100%;
 }
 
 .experience-card {

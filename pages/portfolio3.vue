@@ -12,7 +12,7 @@
     <Portfolio3Section2 :isVisible="isSection2Visible" />
   </div>
 
-  <Portfolio3Section3 />
+  <Portfolio3Section3New />
 </template>
 
 <script setup lang="ts">
