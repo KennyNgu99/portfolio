@@ -12,7 +12,13 @@
     <Portfolio3Section2 :isVisible="isSection2Visible" />
   </div>
 
+  <!-- SECTION 3 -->
+  <!-- Projects Section -->
   <Portfolio3Section3New />
+
+  <!-- SECTION 4 -->
+  <!-- Social media Section -->
+  <Portfolio3Section4 />
 </template>
 
 <script setup lang="ts">
