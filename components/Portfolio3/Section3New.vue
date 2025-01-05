@@ -34,7 +34,6 @@
             </span>
           </div>
         </div>
-        <div class="dummy-div"></div>
       </div>
 
       <!-- RIGHT COLUMN -->
@@ -114,16 +113,17 @@ onMounted(() => {})
 
 /* Content Section Grid */
 .content-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
 }
 
 /* Left Column Grid */
 .left-column {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.2rem;
-  grid-template-rows: auto auto auto;
+  flex: 1;
 }
 
 .project-1 {
@@ -136,15 +136,12 @@ onMounted(() => {})
   margin-right: 10px;
 }
 
-.dummy-div {
-  visibility: hidden;
-}
-
 /* Right Column Grid */
 .right-column {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.2rem;
-  grid-template-rows: auto auto auto;
+  flex: 1;
 }
 
 .section-title {
@@ -173,6 +170,11 @@ onMounted(() => {})
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(219, 219, 219);
+
+  // padding: 20px;
+  // color: white;
+  // height: auto; /* Make sure the height adapts to content */
+  // margin: 0; /* Remove extra space if unnecessary */
 }
 
 .project-content {
