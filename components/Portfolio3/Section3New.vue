@@ -170,11 +170,11 @@ onMounted(() => {})
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(219, 219, 219);
+}
 
-  // padding: 20px;
-  // color: white;
-  // height: auto; /* Make sure the height adapts to content */
-  // margin: 0; /* Remove extra space if unnecessary */
+.project-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s;
 }
 
 .project-content {
