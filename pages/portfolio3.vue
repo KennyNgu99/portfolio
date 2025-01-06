@@ -19,6 +19,10 @@
   <!-- SECTION 4 -->
   <!-- Social media Section -->
   <Portfolio3Section4 />
+
+  <!-- SECTION 5 -->
+  <!-- Contact Section -->
+  <Portfolio3Section5 />
 </template>
 
 <script setup lang="ts">

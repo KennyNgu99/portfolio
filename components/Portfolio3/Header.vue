@@ -34,7 +34,7 @@
           </div>
           <div class="top-buttons">
             <div class="top-button-wrapper">
-              <span class="top-bar-font">Social media</span>
+              <span class="top-bar-font">Fun Fact</span>
             </div>
           </div>
         </div>
