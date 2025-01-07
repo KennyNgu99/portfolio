@@ -9,17 +9,25 @@
     </div>
 
     <div class="middle-section">
-      <div :style="{ display: 'flex', flexDirection: 'column' }">
-        <span class="middle-section-title">Phone</span>
-        <span class="middle-section-sub">0138035796</span>
+      <div class="divider"></div>
+      <div class="middle-left">
+        <div :style="{ display: 'flex', flexDirection: 'column' }">
+          <span class="middle-section-title">Phone</span>
+          <span class="middle-section-sub">+60138035796</span>
+        </div>
+        <div :style="{ display: 'flex', flexDirection: 'column' }">
+          <span class="middle-section-title">Email</span>
+          <span class="middle-section-sub">kankenny9984@gmail.com</span>
+        </div>
+        <div :style="{ display: 'flex', flexDirection: 'column' }">
+          <span class="middle-section-title">Location</span>
+          <span class="middle-section-sub">Petaling Jaya, Malaysia</span>
+        </div>
       </div>
-      <div :style="{ display: 'flex', flexDirection: 'column' }">
-        <span class="middle-section-title">Email</span>
-        <span class="middle-section-sub">kankenny9984@gmail.com</span>
-      </div>
-      <div :style="{ display: 'flex', flexDirection: 'column' }">
-        <span class="middle-section-title">Location</span>
-        <span class="middle-section-sub">Kuala Lumpur, Malaysia</span>
+      <div class="middle-right">
+        <img :src="linkedinLogo" class="linkedinlogo" />
+        <img :src="instagramLogo" class="instagramlogo" />
+        <img :src="whatsappLogo" class="whatsapplogo" />
       </div>
     </div>
   </div>
@@ -27,12 +35,15 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import linkedinLogo from '@/assets/portfolio3/linkedin.svg'
+import instagramLogo from '@/assets/portfolio3/instagram.svg'
+import whatsappLogo from '@/assets/portfolio3/whatsapp.svg'
 </script>
 
 <style lang="scss" scoped>
 // Parent div css
 .project-section {
-  margin: 0 15px 50px 15px;
+  margin: 0 15rem 50px 15rem;
   border-radius: 10px;
   height: 80vh;
   display: flex;
@@ -70,19 +81,59 @@ import { ref, onMounted } from 'vue'
 
 // Middle section css
 .middle-section {
-  background-color: lightgray;
+  background-color: rgb(231, 231, 231);
   height: 100%;
   display: flex;
-  flex: 1;
+  padding: 2rem 0;
+  border-radius: 12px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.middle-left {
+  display: flex;
   flex-direction: column;
-  padding: 3rem 5rem;
-  border-radius: 8px;
   justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.middle-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.divider {
+  position: absolute;
+  left: 50%;
+  bottom: 12.5%;
+  width: 2px;
+  height: 75%;
+  background-color: black;
+}
+
+.linkedinlogo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.instagramlogo {
+  width: 4.4rem;
+  height: 4.4rem;
+}
+
+.whatsapplogo {
+  width: 5rem;
+  height: 5rem;
 }
 
 .middle-section-title {
   font-size: 1.5rem;
   font-weight: 700;
+  align-self: center;
 }
 
 .middle-section-sub {

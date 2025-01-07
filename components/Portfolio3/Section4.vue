@@ -4,38 +4,18 @@
     <span class="social-subtitle">Experiences</span>
     <div class="scroll-wrapper" ref="scrollWrapper">
       <div class="scroll-container">
-        <div class="project-card" :style="{ backgroundColor: 'red' }">
-          Project 1
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'yellow' }">
-          Project 2
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'green' }">
-          Project 3
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'cyan' }">
-          Project 4
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'orange' }">
-          Project 5
-        </div>
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+        <div class="project-card">Project 4</div>
+        <div class="project-card">Project 5</div>
 
         <!-- Duplicate Cards for Seamless Loop -->
-        <div class="project-card" :style="{ backgroundColor: 'red' }">
-          Project 1
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'yellow' }">
-          Project 2
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'green' }">
-          Project 3
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'cyan' }">
-          Project 4
-        </div>
-        <div class="project-card" :style="{ backgroundColor: 'orange' }">
-          Project 5
-        </div>
+        <div class="project-card">Project 1</div>
+        <div class="project-card">Project 2</div>
+        <div class="project-card">Project 3</div>
+        <div class="project-card">Project 4</div>
+        <div class="project-card">Project 5</div>
       </div>
     </div>
   </div>
@@ -146,7 +126,7 @@ onMounted(() => {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-top: 50px;
+  margin: 50px 5rem 0 5rem;
   white-space: nowrap;
   user-select: none;
 }
@@ -161,7 +141,7 @@ onMounted(() => {
 
 /* Project Cards */
 .project-card {
-  background: lightgray;
+  background: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: inline-flex;
   border-radius: 8px;
