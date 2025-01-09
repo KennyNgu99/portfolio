@@ -1,13 +1,54 @@
 <template>
   <div class="project-section">
+    <!-- top section -->
     <div class="top-section">
       <span class="project-title">Howdy!</span>
       <div :style="{ display: 'flex' }">
         <span class="project-subtitle"> Lets connect! Start by</span>
-        <span class="project-subtitle saying-hi">saying hi</span>
+        <v-dialog max-width="500">
+          <template v-slot:activator="{ props: activatorProps }">
+            <span class="project-subtitle saying-hi" v-bind="activatorProps">
+              saying hi
+            </span>
+          </template>
+
+          <template v-slot:default="{ isActive }">
+            <v-card>
+              <v-card-title class="menu-title">
+                Drop me a message
+              </v-card-title>
+              <div class="text-field-container">
+                <v-text-field
+                  label="Name"
+                  outlined
+                  density="compact"
+                  class="input-field"
+                ></v-text-field>
+                <v-text-field
+                  label="Email"
+                  density="compact"
+                  class="input-field"
+                ></v-text-field>
+                <v-text-field
+                  label="Message"
+                  class="input-field"
+                ></v-text-field>
+              </div>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+
+                <v-btn @click="isActive.value = false" class="menu-button">
+                  LET'S GET STARTED
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
       </div>
     </div>
 
+    <!-- middle connection section -->
     <div class="middle-section">
       <div class="divider"></div>
       <div class="middle-left">
@@ -138,5 +179,34 @@ import whatsappLogo from '@/assets/portfolio3/whatsapp.svg'
 
 .middle-section-sub {
   font-size: 1.2rem;
+}
+
+// menu css
+.menu-button {
+  // background-color: var(--background-orange-color);
+  background-color: var(--text-sec-color);
+  color: white;
+  font-weight: 700;
+}
+
+.menu-title {
+  background-color: var(--text-sec-color);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-field-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 1rem;
+}
+
+.input-field {
+  margin: 0.5rem 0;
 }
 </style>

@@ -5,10 +5,12 @@
       <v-col cols="3">
         <div :style="{ margin: '12px 0 0 3vw' }">
           <span
-            class="signature"
+            class="signature kenny-font"
             :style="{ userSelect: 'none', fontSize: '28px' }"
-            >Kenny</span
+            @click="$emit('navigate', 'home')"
           >
+            Kenny
+          </span>
         </div>
       </v-col>
 
@@ -22,17 +24,17 @@
             height: '100%',
           }"
         >
-          <div class="top-buttons">
+          <div class="top-buttons" @click="$emit('navigate', 'section2Ref')">
             <div class="top-button-wrapper">
               <span class="top-bar-font">Work Experience</span>
             </div>
           </div>
-          <div class="top-buttons">
+          <div class="top-buttons" @click="$emit('navigate', 'projects')">
             <div class="top-button-wrapper">
               <span class="top-bar-font">Projects</span>
             </div>
           </div>
-          <div class="top-buttons">
+          <div class="top-buttons" @click="$emit('navigate', 'funFact')">
             <div class="top-button-wrapper">
               <span class="top-bar-font">Fun Fact</span>
             </div>
@@ -56,6 +58,7 @@
             width: '50%',
             cursor: 'pointer',
           }"
+          @click="$emit('navigate', 'contact')"
         >
           <span
             :style="{

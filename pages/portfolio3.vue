@@ -1,28 +1,39 @@
 <template>
   <!-- top bar -->
-  <Portfolio3Header :class="['header', { sticky: isSticky }]" />
+  <Portfolio3Header
+    :class="['header', { sticky: isSticky }]"
+    @navigate="scrollToSection"
+  />
 
   <!-- FIRST SECTION -->
   <!-- Home section -->
-  <Portfolio3Section1 />
+  <div ref="home">
+    <Portfolio3Section1 />
+  </div>
 
   <!-- SECTION 2 -->
-  <!-- Experience Section -->
+  <!-- Work Experience Section -->
   <div ref="section2Ref">
     <Portfolio3Section2 :isVisible="isSection2Visible" />
   </div>
 
   <!-- SECTION 3 -->
   <!-- Projects Section -->
-  <Portfolio3Section3New />
+  <div ref="projects">
+    <Portfolio3Section3New />
+  </div>
 
   <!-- SECTION 4 -->
-  <!-- Social media Section -->
-  <Portfolio3Section4 />
+  <!-- Fun Fact Section -->
+  <div ref="funFact">
+    <Portfolio3Section4 />
+  </div>
 
   <!-- SECTION 5 -->
   <!-- Contact Section -->
-  <Portfolio3Section5 />
+  <div ref="contact">
+    <Portfolio3Section5 />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -47,6 +58,45 @@ const section2Ref = ref<HTMLElement | null>(null)
 const handleIntersection = (entries: IntersectionObserverEntry[]) => {
   const entry = entries[0]
   isSection2Visible.value = entry.isIntersecting
+}
+
+// Refs for sections
+const home = ref<HTMLElement | null>(null)
+// const workExperience = ref<HTMLElement | null>(null)
+const projects = ref<HTMLElement | null>(null)
+const funFact = ref<HTMLElement | null>(null)
+const contact = ref<HTMLElement | null>(null)
+
+// Function to handle scrolling to section (redirection)
+const scrollToSection = (section: string) => {
+  const sectionMap: Record<string, Ref<HTMLElement | null>> = {
+    home,
+    section2Ref,
+    projects,
+    funFact,
+    contact,
+  }
+
+  const targetSection = sectionMap[section]?.value
+  if (targetSection) {
+    // targetSection.scrollIntoView({ behavior: 'smooth' })
+    const offsetDeviation = ref<number>(0)
+    switch (section) {
+      case 'section2Ref':
+        offsetDeviation.value = 30
+        break
+      case 'funFact':
+        offsetDeviation.value = 30
+        break
+      default:
+        offsetDeviation.value = 100
+    }
+    const topPosition = targetSection.offsetTop - offsetDeviation.value
+    window.scrollTo({
+      top: topPosition,
+      behavior: 'smooth',
+    })
+  }
 }
 
 // Attach event listener on mount
