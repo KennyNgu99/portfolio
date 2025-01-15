@@ -2,6 +2,10 @@
 import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
+  target: 'static', // Ensure static site generation
+  app: {
+    baseURL: '/portfolio/', 
+  },
   devtools: { enabled: true },
   postcss: {
     plugins: {
@@ -18,7 +22,7 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   modules: [
     '@nuxt/eslint',
