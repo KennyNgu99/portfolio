@@ -5,28 +5,41 @@ import vuetify from 'vite-plugin-vuetify'
 // run 'npm run generate' to generate the static site
 // run 'npm run deploy' to deploy the site to GitHub Pages
 export default defineNuxtConfig({
-  target: 'static', // Ensure static site generation
+  // Ensure static site generation
+  target: 'static',
+
   app: {
     baseURL: '/portfolio/', 
-  },  
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/avatar.svg' },
+      ],
+    },
+  },
+
   devtools: { enabled: true },
+
   postcss: {  
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   css: [
     '~/assets/main.scss',
     'vuetify/styles/main.sass',
     '@mdi/font/css/materialdesignicons.css',
   ],
+
   build: {
     transpile: ['vuetify'],
   },
+
   typescript: {
     typeCheck: false,
   },
+
   modules: [
     '@nuxt/eslint',
     (_options, nuxt) => {
@@ -40,4 +53,6 @@ export default defineNuxtConfig({
       })
     },
   ],
+
+  compatibilityDate: '2025-01-16',
 })

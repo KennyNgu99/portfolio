@@ -1,10 +1,7 @@
 <template>
   <div :style="{ position: 'relative', height: '90vh' }">
-    <img
-      src="~assets/portfolio3/paintBackground.svg"
-      class="paint-background"
-    />
-    <img src="~assets/portfolio3/portrait.png" class="portrait-background" />
+    <img src="/paintBackground.svg" class="paint-background" />
+    <img src="/portrait.png" class="portrait-background" />
 
     <div class="middle-section">
       <div :style="{ flex: 1, display: 'grid' }">
@@ -56,7 +53,7 @@
             marginRight: '9vw',
           }"
         >
-          <img :src="gcpLogo" class="gcp-logo" />
+          <img src="/gcpLogo.svg" class="gcp-logo" />
           <span class="ace-font">GCP Certified</span>
           <span class="ace-font">Associate</span>
           <span class="ace-font">Cloud Engineer</span>
@@ -68,7 +65,6 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import gcpLogo from '@/assets/portfolio3/gcpLogo.svg'
 definePageMeta({
   layout: false,
 })
