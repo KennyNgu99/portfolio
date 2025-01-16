@@ -5,7 +5,7 @@
       <div class="left-column">
         <div class="project-1 project-card">
           <img
-            src="~assets/portfolio3/projectPhotoUploadUi.jpg"
+            :src="`${baseURL}/projectPhotoUploadUi.jpg`"
             :style="{ scale: 1 }"
           />
           <div class="project-content">
@@ -19,10 +19,7 @@
         </div>
 
         <div class="project-3 project-card">
-          <img
-            src="~assets/portfolio3/projectDrcFixes.jpg"
-            :style="{ scale: 1 }"
-          />
+          <img :src="`${baseURL}/projectDrcFixes.jpg`" :style="{ scale: 1 }" />
           <div class="project-content">
             <span class="card-title">Automation of DRC Fixes</span>
             <span class="card-content">
@@ -47,7 +44,7 @@
 
         <div class="project-2 project-card">
           <img
-            src="~assets/portfolio3/projectMlFilterTuningApproach.jpg"
+            :src="`${baseURL}/projectMlFilterTuningApproach.jpg`"
             :style="{ scale: 1 }"
           />
           <div class="project-content">
@@ -62,7 +59,7 @@
 
         <div class="project-4 project-card">
           <img
-            src="~assets/portfolio3/projectFriendDetector.png"
+            :src="`${baseURL}/projectFriendDetector.png`"
             :style="{ scale: 1 }"
           />
           <div class="project-content">
@@ -83,7 +80,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-
+const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 onMounted(() => {})
 </script>
 

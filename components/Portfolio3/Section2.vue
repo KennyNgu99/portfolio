@@ -18,7 +18,7 @@
       >
         <div :style="{ position: 'relative' }">
           <span class="experience-card-number">01</span>
-          <img :src="gamudaLogo" class="gamuda-logo" />
+          <img :src="`${baseURL}/gamudLogo.svg`" class="gamuda-logo" />
         </div>
 
         <div :style="{ display: 'flex' }">
@@ -50,7 +50,7 @@
       >
         <div :style="{ position: 'relative' }">
           <span class="experience-card-number">02</span>
-          <img :src="intelLogo" class="intel-logo" />
+          <img :src="`${baseURL}/intelLogo.svg`" class="intel-logo" />
         </div>
         <div :style="{ display: 'flex' }">
           <span
@@ -82,8 +82,7 @@
 </template>
 
 <script setup lang="ts">
-import intelLogo from '@/assets/portfolio3/intelLogo.svg'
-import gamudaLogo from '@/assets/portfolio3/gamudLogo.svg'
+const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // Handle props here
 const props = defineProps({
   isVisible: Boolean,

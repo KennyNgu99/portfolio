@@ -53,7 +53,7 @@
             marginRight: '9vw',
           }"
         >
-          <img src="/gcpLogo.svg" class="gcp-logo" />
+          <img :src="`${baseURL}/gcpLogo.svg`" class="gcp-logo" />
           <span class="ace-font">GCP Certified</span>
           <span class="ace-font">Associate</span>
           <span class="ace-font">Cloud Engineer</span>

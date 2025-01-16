@@ -66,9 +66,9 @@
         </div>
       </div>
       <div class="middle-right">
-        <img :src="linkedinLogo" class="linkedinlogo" />
-        <img :src="instagramLogo" class="instagramlogo" />
-        <img :src="whatsappLogo" class="whatsapplogo" />
+        <img :src="`${baseURL}/linkedin.svg`" class="linkedinlogo" />
+        <img :src="`${baseURL}/instagram.svg`" class="instagramlogo" />
+        <img :src="`${baseURL}/whatsapp.svg`" class="whatsapplogo" />
       </div>
     </div>
   </div>
@@ -76,9 +76,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import linkedinLogo from '@/assets/portfolio3/linkedin.svg'
-import instagramLogo from '@/assets/portfolio3/instagram.svg'
-import whatsappLogo from '@/assets/portfolio3/whatsapp.svg'
+
+const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 </script>
 
 <style lang="scss" scoped>
