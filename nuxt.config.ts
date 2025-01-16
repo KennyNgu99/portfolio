@@ -1,13 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify from 'vite-plugin-vuetify'
 
+
+// run 'npm run generate' to generate the static site
+// run 'npm run deploy' to deploy the site to GitHub Pages
 export default defineNuxtConfig({
   target: 'static', // Ensure static site generation
   app: {
     baseURL: '/portfolio/', 
-  },
+  },  
   devtools: { enabled: true },
-  postcss: {
+  postcss: {  
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
