@@ -1,7 +1,7 @@
 <template>
   <div :style="{ position: 'relative', height: '90vh' }">
-    <img src="/paintBackground.svg" class="paint-background" />
-    <img src="/portrait.png" class="portrait-background" />
+    <img :src="`${baseURL}/paintBackground.svg`" class="paint-background" />
+    <img :src="`${baseURL}/portrait.png`" class="portrait-background" />
 
     <div class="middle-section">
       <div :style="{ flex: 1, display: 'grid' }">
@@ -68,7 +68,7 @@ import { ref, computed } from 'vue'
 definePageMeta({
   layout: false,
 })
-
+const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // 2022 August
 const startDate = new Date(2022, 7)
 const currentDate = new Date()
