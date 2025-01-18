@@ -66,9 +66,15 @@
         </div>
       </div>
       <div class="middle-right">
-        <img :src="`${baseURL}/linkedin.svg`" class="linkedinlogo" />
-        <img :src="`${baseURL}/instagram.svg`" class="instagramlogo" />
-        <img :src="`${baseURL}/whatsapp.svg`" class="whatsapplogo" />
+        <a href="https://www.linkedin.com/in/kennyngukaichun" target="_blank">
+          <img :src="`${baseURL}/linkedin.svg`" class="linkedinlogo" />
+        </a>
+        <a href="https://www.instagram.com/kenny.ngu.73/" target="_blank">
+          <img :src="`${baseURL}/instagram.svg`" class="instagramlogo" />
+        </a>
+        <a href="https://wa.me/60138035796" target="_blank">
+          <img :src="`${baseURL}/whatsapp.svg`" class="whatsapplogo" />
+        </a>
       </div>
     </div>
   </div>

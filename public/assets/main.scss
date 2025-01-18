@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Signature';
+  src: url("./font/Meddon-Regular.ttf") format('truetype');
+}
+
+// Base colors
+$primary: #01579b;
+$secondary: #00bcd4;
+$tertiary: #630e81;
+$background: #fbfbfb;
+// $contrast: #f0f0f0;
+$contrast: #ffd2a6;
+$orange_background: #EF8100;
+
+// Text colors
+$text: #3e3e3e;
+$subText: #b6b6b6;
+// $secDomText: #111111;
+$secDomText: #964800;
+
+// Status colors
+$success: #006064;
+$warning: #f5c344;
+$error: #e63946;
+
+:root {
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+  --tertiary-color: #{$tertiary};
+  --background-color: #{$background};
+  --background-orange-color: #{$orange_background};
+  --text-color: #{$text};
+  --text-sec-color: #{$secDomText};
+  --subText-color: #{$subText};
+  --success-color: #{$success};
+  --warning-color: #{$warning};
+  --error-color: #{$error};
+  --contrast-color: #{$contrast};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+body {
+  background: $background;
+}
+
+.title {
+  font-family: 'Segoe UI';
+  font-size: 52px;
+  // font-style: normal;
+  font-weight: 750;
+  line-height: normal;
+  color: $text;
+  // color: $secDomText;
+}
+
+.signature {
+  font-family: 'Signature';
+  font-style: normal;
+  font-size: 36px;
+  line-height: normal;
+  color: #8b4300;
+}
+
+h1 {
+  font-family: 'Segoe UI';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: $text;
+}
+
+h1.semibold {
+  font-family: 'Segoe UI';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: $text;
+}
+
+h2 {
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $text;
+}
+
+h2.semibold {
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: $text;
+}
+
+h3 {
+  font-family: 'Segoe UI';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+  color: $text;
+}
+
+h3.light {
+  font-family: 'Segoe UI';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: $text;
+}
+
+h3.semilight {
+  font-family: 'Segoe UI';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+  color: $text;
+}
+
+h3.semibold {
+  font-family: 'Segoe UI';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: $text;
+}
+
+h4 {
+  font-family: 'Segoe UI';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.28px;
+  color: $text;
+}
+
+h4.semilight {
+  font-family: 'Segoe UI';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+  color: $text;
+}
+
+h4.semibold {
+  font-family: 'Segoe UI';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.28px;
+  color: $text;
+}
+
+h5 {
+  font-family: 'Segoe UI';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $text;
+}
+
+h5.semibold {
+  font-family: 'Segoe UI';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: $text;
+}
+
+h5.semilight {
+  font-family: 'Segoe UI';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+  color: $text;
+}
+
+.title.success,
+h1.success,
+h2.success,
+h3.success,
+h4.success,
+h5.success {
+  color: $success;
+}
+
+.title.warning,
+h1.warning,
+h2.warning,
+h3.warning,
+h4.warning,
+h5.warning {
+  color: $warning;
+}
+
+.title.error,
+h1.error,
+h2.error,
+h3.error,
+h4.error,
+h5.error {
+  color: $error;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 11px;
+  }
+
+  h5 {
+    font-size: 10px;
+  }
+}

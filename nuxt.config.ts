@@ -6,7 +6,9 @@ import vuetify from 'vite-plugin-vuetify'
 // run 'npm run deploy' to deploy the site to GitHub Pages
 export default defineNuxtConfig({
   // Ensure static site generation
-  target: 'static',
+  nitro: {
+    preset: 'static', // Ensures static site generation
+  },
 
   app: {
     baseURL: '/portfolio/', 
