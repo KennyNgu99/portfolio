@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: '/portfolio/', 
+    baseURL: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
     head: {
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/avatar.svg' },

@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Signature';
-  src: url("./font/Meddon-Regular.ttf") format('truetype');
+  src: url('/Meddon-Regular.ttf') format('truetype'); /* For production */
 }
 
 // Base colors
