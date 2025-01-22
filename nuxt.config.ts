@@ -11,6 +11,11 @@ export default defineNuxtConfig({
   },
 
   app: {
+    // Add baseURL and buildAssetsDir configurations
+    baseURL: '/', // Change this to '/repository-name/' if not using custom domain
+    // buildAssetsDir: 'assets', // Don't use '_' prefix to avoid Jekyll processing
+
+    
     head: {
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/avatar.svg' },
