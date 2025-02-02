@@ -4,20 +4,13 @@
     <img :src="`${baseURL}/portrait.png`" class="portrait-background" />
 
     <div class="middle-section">
-      <div :style="{ flex: 1, display: 'grid' }">
+      <div class="title-section">
         <span class="main-title" :style="{ alignContent: 'end' }">
           Hey There,
         </span>
         <span class="main-title">I'm Kenny</span>
       </div>
-      <div
-        :style="{
-          flex: 1,
-          display: 'grid',
-          justifyContent: 'end',
-          marginRight: '10vw',
-        }"
-      >
+      <div class="subtitle-section">
         <span class="description" :style="{ alignContent: 'end' }">
           Currently a fullstack developer.
         </span>
@@ -25,40 +18,34 @@
       </div>
     </div>
     <div class="bottom-section">
-      <div :style="{ display: 'flex', flex: 1, marginLeft: '6rem' }">
-        <span
-          class="title"
-          :style="{
-            alignContent: 'center',
-            marginRight: '12px',
-            fontSize: '3rem',
-          }"
-          >{{ yearOfExperience }}
+      <div class="two-year-exp">
+        <span class="title" :style="{
+          alignContent: 'center',
+          marginRight: '12px',
+          fontSize: displayWidth > 600 ? '3rem' : '1.8rem',
+        }">{{ yearOfExperience }}
         </span>
         <div :style="{ display: 'grid' }">
-          <h2
-            class="semibold"
-            :style="{ alignContent: 'end', fontSize: '1.5rem' }"
-          >
+          <h2 class="semibold" :style="{ alignContent: 'end', fontSize: displayWidth > 600 ? '1.5rem' : '1rem' }">
             YEARS
           </h2>
-          <h2 class="semibold" :style="{ fontSize: '1.5rem' }">EXPERIENCE</h2>
+          <h2 class="semibold" :style="{ fontSize: displayWidth > 600 ? '1.5rem' : '1rem' }">EXPERIENCE</h2>
         </div>
       </div>
+
+
       <div :style="{ flex: '1' }">
-        <div
-          :style="{
-            display: 'grid',
-            justifyContent: 'end',
-            marginRight: '9vw',
-          }"
-        >
+        <div class="gcp-section">
           <img :src="`${baseURL}/gcpLogo.svg`" class="gcp-logo" />
-          <span class="ace-font">GCP Certified</span>
-          <span class="ace-font">Associate</span>
-          <span class="ace-font">Cloud Engineer</span>
+          <span v-if="displayWidth > 600" class="ace-font">GCP Certified</span>
+          <span v-if="displayWidth > 600" class="ace-font">Associate</span>
+          <span v-if="displayWidth > 600" class="ace-font">Cloud Engineer</span>
+          <span v-else :style="{ marginLeft: '8px', fontWeight: '600' }"> GCP Certified
+            Associate
+            Cloud Engineer</span>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -68,6 +55,10 @@ import { ref, computed } from 'vue'
 definePageMeta({
   layout: false,
 })
+
+import { useDisplay } from "vuetify";
+const { width: displayWidth } = useDisplay();
+
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // 2022 August
 const startDate = new Date(2022, 7)
@@ -94,6 +85,24 @@ const yearOfExperience = computed(() => {
 .bottom-section {
   height: 40vh;
   display: flex;
+}
+
+.two-year-exp {
+  display: flex;
+  flex: 1;
+  margin-left: 6rem;
+}
+
+.title-section {
+  flex: 1;
+  display: grid;
+}
+
+.subtitle-section {
+  flex: 1;
+  display: grid;
+  justify-content: end;
+  margin-right: 10vw;
 }
 
 // ********************* font related css
@@ -124,6 +133,12 @@ const yearOfExperience = computed(() => {
 }
 
 // ********************* gcp ace related css
+.gcp-section {
+  display: grid;
+  justify-content: end;
+  margin-right: 9vw;
+}
+
 .ace-font {
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -137,16 +152,106 @@ const yearOfExperience = computed(() => {
   justify-self: center;
 }
 
-// ********************* for screen > 2560px
+// ********************** media queries
+// ********************* for screen > 2560px (4k)
 @media (min-width: 2560px) {
   .paint-background {
-    top: 60%;
-    left: 50%;
     transform: translate(-50%, -50%) scale(1.4);
   }
 
   .portrait-background {
     transform: translate(-50%, -50%) scale(0.65);
+  }
+}
+
+// // mobile view - other models ( 400 - 600px)
+@media (max-width: 600px) {
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 2rem;
+  }
+
+  .title-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subtitle-section {
+    justify-content: start;
+    margin: 5px 0 0 0px;
+  }
+
+  .main-title {
+    font-size: 3rem;
+    margin-left: 10px;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    margin: 5px 0 0 10px;
+    color: var(--text-sec-color);
+  }
+
+  .paint-background {
+    transform: translate(-50%, -65%) scale(0.7);
+  }
+
+  .portrait-background {
+    transform: translate(-53%, -65%) scale(1);
+  }
+
+  .bottom-section {
+    margin-top: 25rem;
+    display: grid;
+    height: fit-content;
+  }
+
+  .two-year-exp {
+    margin: 20px 0 10px 0;
+    justify-content: center;
+  }
+
+  .gcp-section {
+    width: 100%;
+    display: flex;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ace-font {
+    font-size: 1.2rem;
+    text-transform: none;
+  }
+
+  .gcp-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+// mobile view - iphone SE 
+/* ========== Specifically up to 670 tall ========== */
+@media (max-height: 670px) {
+
+  /* Override ONLY paint & portrait backgrounds */
+  .paint-background {
+    transform: translate(-50%, -45%) scale(0.7);
+  }
+
+  .portrait-background {
+    transform: translate(-50%, -45%) scale(0.95);
+  }
+
+  .bottom-section {
+    margin-top: 20rem;
+  }
+
+  .gcp-logo {
+    width: 30px;
+    height: 30px;
   }
 }
 </style>
