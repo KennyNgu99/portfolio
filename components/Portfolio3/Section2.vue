@@ -4,18 +4,13 @@
     <div :style="{ display: 'flex', flexDirection: 'column' }">
       <span class="section-title">My Working Experience</span>
       <span class="section-description">
-        Companies I have worked for in the past.</span
-      >
+        Companies I have worked for in the past.</span>
       <!-- <span class="section-description"> for in the past. </span> -->
     </div>
 
     <!-- Experience content -->
     <div class="experience-content">
-      <div
-        class="experience-card"
-        :class="{ 'animate-card': props.isVisible }"
-        :style="{ animationDelay: '0s' }"
-      >
+      <div class="experience-card" :class="{ 'animate-card': props.isVisible }" :style="{ animationDelay: '0s' }">
         <div :style="{ position: 'relative' }">
           <span class="experience-card-number">01</span>
           <img :src="`${baseURL}/gamudLogo.svg`" class="gamuda-logo" />
@@ -25,10 +20,7 @@
           <span class="experience-card-job-title" :style="{ color: 'red' }">
             Gamuda
           </span>
-          <span
-            class="experience-card-job-title"
-            :style="{ 'margin-left': '0' }"
-          >
+          <span class="experience-card-job-title" :style="{ 'margin-left': '0' }">
             , Software Engineer
           </span>
         </div>
@@ -43,26 +35,16 @@
           leveraging backend technologies such as Golang and Python.
         </span>
       </div>
-      <div
-        class="experience-card"
-        :class="{ 'animate-card': props.isVisible }"
-        :style="{ animationDelay: '0.1s' }"
-      >
+      <div class="experience-card" :class="{ 'animate-card': props.isVisible }" :style="{ animationDelay: '0.1s' }">
         <div :style="{ position: 'relative' }">
           <span class="experience-card-number">02</span>
           <img :src="`${baseURL}/intelLogo.svg`" class="intel-logo" />
         </div>
         <div :style="{ display: 'flex' }">
-          <span
-            class="experience-card-job-title"
-            :style="{ color: 'var(--primary-color)' }"
-          >
+          <span class="experience-card-job-title" :style="{ color: 'var(--primary-color)' }">
             Intel
           </span>
-          <span
-            class="experience-card-job-title"
-            :style="{ 'margin-left': '0' }"
-          >
+          <span class="experience-card-job-title" :style="{ 'margin-left': '0' }">
             , Structural Design Engineer Trainee
           </span>
         </div>
@@ -82,6 +64,8 @@
 </template>
 
 <script setup lang="ts">
+import { useDisplay } from "vuetify";
+const { width: displayWidth } = useDisplay();
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // Handle props here
 const props = defineProps({
@@ -179,9 +163,46 @@ const props = defineProps({
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-</style>
+
+// ********************** media queries
+// // mobile view - other models ( 400 - 600px)
+@media (max-width: 600px) {
+  .experience-section {
+    margin: 0 10px 150px 10px;
+    height: fit-content;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin: 1rem 0 0 1rem;
+  }
+
+  .section-description {
+    font-size: 2.2rem;
+    margin: 0.2rem 0 0 1rem;
+  }
+
+  .experience-content {
+    margin: 12px 10px 20px 10px;
+    display: grid;
+  }
+
+  .experience-card {
+    height: 100%;
+    width: 100%;
+  }
+
+  .experience-card-description {
+    margin: 12px 24px 10px 24px;
+  }
+}
+
+// mobile view - iphone SE 
+/* ========== Specifically up to 670 tall ========== */
+// @media (max-height: 670px) {}</style>
