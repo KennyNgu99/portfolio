@@ -184,7 +184,7 @@ const yearOfExperience = computed(() => {
   }
 
   .main-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-left: 10px;
   }
 
@@ -232,9 +232,27 @@ const yearOfExperience = computed(() => {
   }
 }
 
+
+// mobile view - iphone XR 
+/* ========== Specifically up to 900 tall ========== */
+@media (max-height: 900px) and (max-width: 420px) {
+  .bottom-section {
+    margin-top: 24rem;
+  }
+}
+
+// mobile view - iphone 12 pro
+/* ========== Specifically up to 850 tall ========== */
+@media (max-height: 850px) and (max-width: 391px) {
+  .bottom-section {
+    margin-top: 22rem;
+  }
+}
+
+
 // mobile view - iphone SE 
 /* ========== Specifically up to 670 tall ========== */
-@media (max-height: 670px) {
+@media (max-height: 670px) and (max-width: 400px) {
 
   /* Override ONLY paint & portrait backgrounds */
   .paint-background {
@@ -252,6 +270,10 @@ const yearOfExperience = computed(() => {
   .gcp-logo {
     width: 30px;
     height: 30px;
+  }
+
+  .main-title {
+    font-size: 3rem;
   }
 }
 </style>

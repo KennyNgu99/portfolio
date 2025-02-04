@@ -1,9 +1,6 @@
 <template>
   <!-- top bar -->
-  <Portfolio3Header
-    :class="['header', { sticky: isSticky }]"
-    @navigate="scrollToSection"
-  />
+  <Portfolio3Header :class="['header', { sticky: isSticky }]" @navigate="scrollToSection" />
 
   <!-- FIRST SECTION -->
   <!-- Home section -->
@@ -143,14 +140,17 @@ onUnmounted(() => {
     transform: translateY(-50px);
     opacity: 0.4;
   }
+
   25% {
     transform: translateY(-30px);
     opacity: 0.6;
   }
+
   50% {
     transform: translateY(-15px);
     opacity: 0.8;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;

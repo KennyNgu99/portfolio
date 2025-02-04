@@ -16,15 +16,16 @@
           <img :src="`${baseURL}/gamudLogo.svg`" class="gamuda-logo" />
         </div>
 
-        <div :style="{ display: 'flex' }">
+        <div :style="{ display: 'flex', flexDirection: displayWidth <= 600 ? 'column' : 'row' }">
           <span class="experience-card-job-title" :style="{ color: 'red' }">
             Gamuda
           </span>
-          <span class="experience-card-job-title" :style="{ 'margin-left': '0' }">
-            , Software Engineer
+          <span class="experience-card-job-title" v-if="displayWidth > 600" :style="{ marginLeft: '0' }">,</span>
+          <span class="experience-card-job-title" :style="{ marginLeft: displayWidth > 600 ? '8px' : '24px' }">
+            Software Engineer
           </span>
         </div>
-        <span :style="{ margin: '-2px 0 0 24px', fontStyle: 'italic' }">
+        <span :style="{ margin: displayWidth > 600 ? '-2px 0 0 24px' : '5px 0 0 24px', fontStyle: 'italic' }">
           (2022 - Present)
         </span>
         <span class="experience-card-description">
@@ -40,15 +41,17 @@
           <span class="experience-card-number">02</span>
           <img :src="`${baseURL}/intelLogo.svg`" class="intel-logo" />
         </div>
-        <div :style="{ display: 'flex' }">
+        <div :style="{ display: 'flex', flexDirection: displayWidth <= 600 ? 'column' : 'row' }">
           <span class="experience-card-job-title" :style="{ color: 'var(--primary-color)' }">
             Intel
           </span>
-          <span class="experience-card-job-title" :style="{ 'margin-left': '0' }">
-            , Structural Design Engineer Trainee
+          <span class="experience-card-job-title" v-if="displayWidth > 600" :style="{ marginLeft: '0' }">,</span>
+          <span class="experience-card-job-title"
+            :style="{ marginLeft: displayWidth > 600 ? '8px' : '24px', lineHeight: displayWidth > 600 ? '' : 'normal' }">
+            Structural Design Engineer Trainee
           </span>
         </div>
-        <span :style="{ margin: '-2px 0 0 24px', fontStyle: 'italic' }">
+        <span :style="{ margin: displayWidth > 600 ? '-2px 0 0 24px' : '5px 0 0 24px', fontStyle: 'italic' }">
           (2020 - 2021)
         </span>
         <span class="experience-card-description">
@@ -171,10 +174,10 @@ const props = defineProps({
 }
 
 // ********************** media queries
-// // mobile view - other models ( 400 - 600px)
+// // mobile view - other models (width 400 - 600px)
 @media (max-width: 600px) {
   .experience-section {
-    margin: 0 10px 150px 10px;
+    margin: -3rem 10px 150px 10px;
     height: fit-content;
   }
 
@@ -201,8 +204,33 @@ const props = defineProps({
   .experience-card-description {
     margin: 12px 24px 10px 24px;
   }
+
+  .gamuda-logo {
+    right: calc(-33%);
+  }
+}
+
+// mobile view - iphone XR 
+/* ========== Specifically up to 900 tall ========== */
+@media (max-height: 900px) and (max-width: 420px) {
+  .experience-section {
+    margin: -2rem 10px 150px 10px;
+  }
+}
+
+// mobile view - iphone 12 pro
+/* ========== Specifically up to 850 tall ========== */
+@media (max-height: 850px) and (max-width: 391px) {
+  .experience-section {
+    margin: -1rem 10px 150px 10px;
+  }
 }
 
 // mobile view - iphone SE 
 /* ========== Specifically up to 670 tall ========== */
-// @media (max-height: 670px) {}</style>
+@media (max-height: 670px) and (max-width: 400px) {
+  .experience-section {
+    margin: 4rem 10px 150px 10px;
+  }
+}
+</style>
