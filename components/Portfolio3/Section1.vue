@@ -19,20 +19,33 @@
     </div>
     <div class="bottom-section">
       <div class="two-year-exp">
-        <span class="title" :style="{
-          alignContent: 'center',
-          marginRight: '12px',
-          fontSize: displayWidth > 600 ? '3rem' : '1.8rem',
-        }">{{ yearOfExperience }}
+        <span
+          class="title"
+          :style="{
+            alignContent: 'center',
+            marginRight: '12px',
+            fontSize: displayWidth > 600 ? '3rem' : '1.8rem',
+          }"
+          >{{ yearOfExperience }}
         </span>
         <div :style="{ display: 'grid' }">
-          <h2 class="semibold" :style="{ alignContent: 'end', fontSize: displayWidth > 600 ? '1.5rem' : '1rem' }">
+          <h2
+            class="semibold"
+            :style="{
+              alignContent: 'end',
+              fontSize: displayWidth > 600 ? '1.5rem' : '1rem',
+            }"
+          >
             YEARS
           </h2>
-          <h2 class="semibold" :style="{ fontSize: displayWidth > 600 ? '1.5rem' : '1rem' }">EXPERIENCE</h2>
+          <h2
+            class="semibold"
+            :style="{ fontSize: displayWidth > 600 ? '1.5rem' : '1rem' }"
+          >
+            EXPERIENCE
+          </h2>
         </div>
       </div>
-
 
       <div :style="{ flex: '1' }">
         <div class="gcp-section">
@@ -40,12 +53,11 @@
           <span v-if="displayWidth > 600" class="ace-font">GCP Certified</span>
           <span v-if="displayWidth > 600" class="ace-font">Associate</span>
           <span v-if="displayWidth > 600" class="ace-font">Cloud Engineer</span>
-          <span v-else :style="{ marginLeft: '8px', fontWeight: '600' }"> GCP Certified
-            Associate
-            Cloud Engineer</span>
+          <span v-else :style="{ marginLeft: '8px', fontWeight: '600' }">
+            GCP Certified Associate Cloud Engineer</span
+          >
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -56,8 +68,8 @@ definePageMeta({
   layout: false,
 })
 
-import { useDisplay } from "vuetify";
-const { width: displayWidth } = useDisplay();
+import { useDisplay } from 'vuetify'
+const { width: displayWidth } = useDisplay()
 
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // 2022 August
@@ -185,12 +197,12 @@ const yearOfExperience = computed(() => {
 
   .main-title {
     font-size: 3.5rem;
-    margin-left: 10px;
+    margin-left: 25px;
   }
 
   .description {
     font-size: 1.2rem;
-    margin: 5px 0 0 10px;
+    margin: 5px 0 0 25px;
     color: var(--text-sec-color);
   }
 
@@ -232,8 +244,7 @@ const yearOfExperience = computed(() => {
   }
 }
 
-
-// mobile view - iphone XR 
+// mobile view - iphone XR
 /* ========== Specifically up to 900 tall ========== */
 @media (max-height: 900px) and (max-width: 420px) {
   .bottom-section {
@@ -249,11 +260,9 @@ const yearOfExperience = computed(() => {
   }
 }
 
-
-// mobile view - iphone SE 
+// mobile view - iphone SE
 /* ========== Specifically up to 670 tall ========== */
 @media (max-height: 670px) and (max-width: 400px) {
-
   /* Override ONLY paint & portrait backgrounds */
   .paint-background {
     transform: translate(-50%, -45%) scale(0.7);

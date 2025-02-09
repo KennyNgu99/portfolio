@@ -80,6 +80,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+
+import { useDisplay } from 'vuetify'
+const { width: displayWidth } = useDisplay()
+
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 onMounted(() => {})
 </script>
@@ -113,6 +117,7 @@ onMounted(() => {})
   display: flex;
   gap: 1.2rem;
   align-items: flex-start;
+  flex-direction: row;
 }
 
 /* Left Column Grid */
@@ -189,5 +194,69 @@ onMounted(() => {})
 .card-content {
   font-size: 1rem;
   color: white;
+}
+
+// ********************** media queries
+// // mobile view - other models (width 400 - 600px)
+@media (max-width: 600px) {
+  .content-section {
+    flex-direction: column-reverse; // Reverse the order for mobile
+    gap: 0;
+  }
+
+  .project-section {
+    margin: -5rem 15px 10px 15px;
+  }
+
+  // right column css in mobile view
+  .right-column {
+    margin-bottom: 1.2rem;
+  }
+
+  .project-title {
+    margin: 0 0 0 0;
+  }
+
+  .project-subtitle {
+    font-size: 2.2rem;
+    margin: 0 0 0 0;
+  }
+
+  .section-title {
+    height: 150px;
+    padding: 0 10px;
+  }
+
+  .project-2 {
+    margin-left: 0px;
+  }
+
+  .project-4 {
+    margin-left: 0px;
+  }
+
+  // left column css in mobile view
+  .project-1 {
+    margin-right: 0px;
+  }
+
+  .project-3 {
+    margin-right: 0px;
+  }
+}
+
+// mobile view - iphone XR
+/* ========== Specifically up to 900 tall ========== */
+@media (max-height: 900px) and (max-width: 420px) {
+}
+
+// mobile view - iphone 12 pro
+/* ========== Specifically up to 850 tall ========== */
+@media (max-height: 850px) and (max-width: 391px) {
+}
+
+// mobile view - iphone SE
+/* ========== Specifically up to 670 tall ========== */
+@media (max-height: 670px) and (max-width: 400px) {
 }
 </style>
