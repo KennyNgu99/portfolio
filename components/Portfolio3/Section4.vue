@@ -47,6 +47,9 @@
 </template>
 
 <script setup lang="ts">
+import { useDisplay } from 'vuetify'
+const { width: displayWidth } = useDisplay()
+
 import { ref, onMounted } from 'vue'
 const scrollWrapper = ref<HTMLElement | null>(null)
 const isDetected = ref(false)
@@ -169,5 +172,71 @@ onMounted(() => {
   to {
     transform: translateX(-50%);
   }
+}
+
+// ********************** media queries
+// // mobile view - other models (width 400 - 600px)
+@media (max-width: 600px) {
+  .section-4 {
+    margin-bottom: 0;
+  }
+
+  // font css
+  .section-4-title {
+    // margin: 3rem 0 0 5rem;
+    margin: 1rem 0 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .section-4-subtitle {
+    margin: 0.2rem 0 0 1rem;
+    font-size: 2.2rem;
+  }
+
+  /* Scroll Wrapper */
+  .scroll-wrapper {
+    flex-direction: column;
+  }
+
+  /* Scroll Container */
+  .scroll-container {
+    flex-direction: column;
+  }
+
+  /* Project Cards */
+  .project-card {
+    height: 30vh;
+    width: 80%;
+    margin: 10px 0;
+    padding: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+// mobile view - iphone XR
+/* ========== Specifically up to 900 tall ========== */
+@media (max-height: 900px) and (max-width: 420px) {
+}
+
+// mobile view - iphone 12 pro
+/* ========== Specifically up to 850 tall ========== */
+@media (max-height: 850px) and (max-width: 391px) {
+}
+
+// mobile view - iphone SE
+/* ========== Specifically up to 670 tall ========== */
+@media (max-height: 670px) and (max-width: 400px) {
 }
 </style>

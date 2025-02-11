@@ -4,28 +4,51 @@
     <div :style="{ display: 'flex', flexDirection: 'column' }">
       <span class="section-title">My Working Experience</span>
       <span class="section-description">
-        Companies I have worked for in the past.</span>
+        Companies I have worked for in the past.</span
+      >
       <!-- <span class="section-description"> for in the past. </span> -->
     </div>
 
     <!-- Experience content -->
     <div class="experience-content">
-      <div class="experience-card" :class="{ 'animate-card': props.isVisible }" :style="{ animationDelay: '0s' }">
+      <div
+        class="experience-card"
+        :class="{ 'animate-card': props.isVisible }"
+        :style="{ animationDelay: '0s' }"
+      >
         <div :style="{ position: 'relative' }">
           <span class="experience-card-number">01</span>
           <img :src="`${baseURL}/gamudLogo.svg`" class="gamuda-logo" />
         </div>
 
-        <div :style="{ display: 'flex', flexDirection: displayWidth <= 600 ? 'column' : 'row' }">
+        <div
+          :style="{
+            display: 'flex',
+            flexDirection: displayWidth <= 600 ? 'column' : 'row',
+          }"
+        >
           <span class="experience-card-job-title" :style="{ color: 'red' }">
             Gamuda
           </span>
-          <span class="experience-card-job-title" v-if="displayWidth > 600" :style="{ marginLeft: '0' }">,</span>
-          <span class="experience-card-job-title" :style="{ marginLeft: displayWidth > 600 ? '8px' : '24px' }">
+          <span
+            class="experience-card-job-title"
+            v-if="displayWidth > 600"
+            :style="{ marginLeft: '0' }"
+            >,</span
+          >
+          <span
+            class="experience-card-job-title"
+            :style="{ marginLeft: displayWidth > 600 ? '8px' : '24px' }"
+          >
             Software Engineer
           </span>
         </div>
-        <span :style="{ margin: displayWidth > 600 ? '-2px 0 0 24px' : '5px 0 0 24px', fontStyle: 'italic' }">
+        <span
+          :style="{
+            margin: displayWidth > 600 ? '-2px 0 0 24px' : '5px 0 0 24px',
+            fontStyle: 'italic',
+          }"
+        >
           (2022 - Present)
         </span>
         <span class="experience-card-description">
@@ -36,22 +59,49 @@
           leveraging backend technologies such as Golang and Python.
         </span>
       </div>
-      <div class="experience-card" :class="{ 'animate-card': props.isVisible }" :style="{ animationDelay: '0.1s' }">
+      <div
+        class="experience-card"
+        :class="{ 'animate-card': props.isVisible }"
+        :style="{ animationDelay: '0.1s' }"
+      >
         <div :style="{ position: 'relative' }">
           <span class="experience-card-number">02</span>
           <img :src="`${baseURL}/intelLogo.svg`" class="intel-logo" />
         </div>
-        <div :style="{ display: 'flex', flexDirection: displayWidth <= 600 ? 'column' : 'row' }">
-          <span class="experience-card-job-title" :style="{ color: 'var(--primary-color)' }">
+        <div
+          :style="{
+            display: 'flex',
+            flexDirection: displayWidth <= 600 ? 'column' : 'row',
+          }"
+        >
+          <span
+            class="experience-card-job-title"
+            :style="{ color: 'var(--primary-color)' }"
+          >
             Intel
           </span>
-          <span class="experience-card-job-title" v-if="displayWidth > 600" :style="{ marginLeft: '0' }">,</span>
-          <span class="experience-card-job-title"
-            :style="{ marginLeft: displayWidth > 600 ? '8px' : '24px', lineHeight: displayWidth > 600 ? '' : 'normal' }">
+          <span
+            class="experience-card-job-title"
+            v-if="displayWidth > 600"
+            :style="{ marginLeft: '0' }"
+            >,</span
+          >
+          <span
+            class="experience-card-job-title"
+            :style="{
+              marginLeft: displayWidth > 600 ? '8px' : '24px',
+              lineHeight: displayWidth > 600 ? '' : 'normal',
+            }"
+          >
             Structural Design Engineer Trainee
           </span>
         </div>
-        <span :style="{ margin: displayWidth > 600 ? '-2px 0 0 24px' : '5px 0 0 24px', fontStyle: 'italic' }">
+        <span
+          :style="{
+            margin: displayWidth > 600 ? '-2px 0 0 24px' : '5px 0 0 24px',
+            fontStyle: 'italic',
+          }"
+        >
           (2020 - 2021)
         </span>
         <span class="experience-card-description">
@@ -67,8 +117,8 @@
 </template>
 
 <script setup lang="ts">
-import { useDisplay } from "vuetify";
-const { width: displayWidth } = useDisplay();
+import { useDisplay } from 'vuetify'
+const { width: displayWidth } = useDisplay()
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // Handle props here
 const props = defineProps({
@@ -210,7 +260,15 @@ const props = defineProps({
   }
 }
 
-// mobile view - iphone XR 
+// mobile view - iphone 15 pro max
+/* ========== Specifically up to 900 tall ========== */
+@media (max-height: 900px) and (max-width: 440px) {
+  .experience-section {
+    margin: -2rem 10px 150px 10px;
+  }
+}
+
+// mobile view - iphone XR
 /* ========== Specifically up to 900 tall ========== */
 @media (max-height: 900px) and (max-width: 420px) {
   .experience-section {
@@ -226,7 +284,7 @@ const props = defineProps({
   }
 }
 
-// mobile view - iphone SE 
+// mobile view - iphone SE
 /* ========== Specifically up to 670 tall ========== */
 @media (max-height: 670px) and (max-width: 400px) {
   .experience-section {

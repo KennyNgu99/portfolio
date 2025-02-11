@@ -50,7 +50,7 @@
 
     <!-- middle connection section -->
     <div class="middle-section">
-      <div class="divider"></div>
+      <div v-if="displayWidth > 600" class="divider"></div>
       <div class="middle-left">
         <div :style="{ display: 'flex', flexDirection: 'column' }">
           <span class="middle-section-title">Phone</span>
@@ -82,6 +82,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useDisplay } from 'vuetify'
+const { width: displayWidth } = useDisplay()
 
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 </script>
@@ -213,5 +215,69 @@ const baseURL = useAppConfig().baseURL || '' // Add fallback for local developme
 
 .input-field {
   margin: 0.5rem 0;
+}
+
+// ********************** media queries
+// // mobile view - other models (width 400 - 600px)
+@media (max-width: 600px) {
+  // Parent div css
+  .project-section {
+    margin: 2rem 15px 50px 15px;
+    height: fit-content;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+  }
+
+  .project-subtitle {
+    font-size: 1.5rem;
+    margin-top: 12px;
+  }
+
+  .middle-section {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .middle-left {
+    margin-bottom: 1rem;
+    height: 100%;
+  }
+
+  .middle-right {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .linkedinlogo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .instagramlogo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .whatsapplogo {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+// mobile view - iphone XR
+/* ========== Specifically up to 900 tall ========== */
+@media (max-height: 900px) and (max-width: 420px) {
+}
+
+// mobile view - iphone 12 pro
+/* ========== Specifically up to 850 tall ========== */
+@media (max-height: 850px) and (max-width: 391px) {
+}
+
+// mobile view - iphone SE
+/* ========== Specifically up to 670 tall ========== */
+@media (max-height: 670px) and (max-width: 400px) {
 }
 </style>

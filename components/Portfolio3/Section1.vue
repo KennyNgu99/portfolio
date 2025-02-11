@@ -244,6 +244,18 @@ const yearOfExperience = computed(() => {
   }
 }
 
+// mobile view - iphone 15 pro max
+/* ========== Specifically up to 900 tall and 440 wide ========== */
+@media (max-height: 900px) and (max-width: 440px) {
+  .bottom-section {
+    margin-top: 23.5rem;
+  }
+
+  .portrait-background {
+    transform: translate(-53%, -60%) scale(1);
+  }
+}
+
 // mobile view - iphone XR
 /* ========== Specifically up to 900 tall ========== */
 @media (max-height: 900px) and (max-width: 420px) {

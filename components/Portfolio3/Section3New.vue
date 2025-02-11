@@ -205,7 +205,7 @@ onMounted(() => {})
   }
 
   .project-section {
-    margin: -5rem 15px 10px 15px;
+    margin: -8rem 15px 10px 15px;
   }
 
   // right column css in mobile view
