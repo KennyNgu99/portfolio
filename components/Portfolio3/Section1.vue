@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="bottom-section">
-      <div class="two-year-exp">
+      <div class="year-exp">
         <span
           class="title"
           :style="{
@@ -73,7 +73,7 @@ const { width: displayWidth } = useDisplay()
 
 const baseURL = useAppConfig().baseURL || '' // Add fallback for local development
 // 2022 August
-const startDate = new Date(2022, 7)
+const startDate = new Date(2022, 5)
 const currentDate = new Date()
 const diffInMilliseconds = currentDate.getTime() - startDate.getTime()
 
@@ -83,7 +83,8 @@ const diffInYears = Math.floor(
 )
 
 const yearOfExperience = computed(() => {
-  return `${diffInYears}+`
+  return `2.5+`
+  // return `${diffInYears}+`
 })
 </script>
 
@@ -99,7 +100,7 @@ const yearOfExperience = computed(() => {
   display: flex;
 }
 
-.two-year-exp {
+.year-exp {
   display: flex;
   flex: 1;
   margin-left: 6rem;
@@ -220,7 +221,7 @@ const yearOfExperience = computed(() => {
     height: fit-content;
   }
 
-  .two-year-exp {
+  .year-exp {
     margin: 20px 0 10px 0;
     justify-content: center;
   }
