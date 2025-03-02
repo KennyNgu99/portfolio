@@ -1,6 +1,9 @@
 <template>
-  <!-- top bar -->
-  <Portfolio3Header :class="['header', { sticky: isSticky }]" @navigate="scrollToSection" />
+  <!-- top header bar -->
+  <Portfolio3Header
+    :class="['header', { sticky: isSticky }]"
+    @navigate="scrollToSection"
+  />
 
   <!-- FIRST SECTION -->
   <!-- Home section -->
