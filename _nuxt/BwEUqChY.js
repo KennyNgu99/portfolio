@@ -1,0 +1,1 @@
+import{_ as t,t as a,v as n,z as s,a5 as _}from"./CG4_2VkC.js";const r={};function d(e,c){return a(),n("div",null,"This is app header aka app bar")}const f=t(r,[["render",d]]),p={},u={class:"DefaultLayout"};function l(e,c){const o=f;return a(),n("div",u,[s(o),_(e.$slots,"default",{},void 0)])}const m=t(p,[["render",l],["__scopeId","data-v-7300a2d4"]]);export{m as default};
