@@ -83,7 +83,7 @@ const diffInYears = Math.floor(
 )
 
 const yearOfExperience = computed(() => {
-  return `2.5+`
+  return `3`
   // return `${diffInYears}+`
 })
 </script>
